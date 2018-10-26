@@ -8,11 +8,17 @@ This is a temporary script file.
 import numpy as np
  
 #generate 6x6 matrix
-matrix=[[5,4,9,12,3,6],[4,8,4,7,5,10],[7,11,4,6,15,19],[13,17,5,20,23,16],[31,27,17,36,12,18],[41,37,29,16,51,23]]
+matrix=[[6,-3,1],[-3,2,0],[1,0,4]]
+#S = np.zeros([5,5])
+#my_matrix=np.random.randint(1,25,[5,5])
 my_matrix=np.mat(matrix)
 #LU factorization
-#[L,U]=np.linalg.(my_matrix)
+H=np.linalg.cholesky(my_matrix)
+reconstructed_My_matrix_LU=np.dot(H,H.T)
 #QR factorization
 [Q,R]=np.linalg.qr(my_matrix)
+reconstructed_My_matrix_QR=np.dot(Q,R);
 #SVD factorization
-[U,S,V]=np.linalg.svd(my_matrix)
+[U,S,VT]=np.linalg.svd(my_matrix)
+re_S=np.diag(S)
+reconstructed_My_matrix_SVD=np.dot(np.dot(U,re_S),VT)
