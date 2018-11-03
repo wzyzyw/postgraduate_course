@@ -1,0 +1,7 @@
+下载armadillio及相关dll，lib，网址：https://blog.csdn.net/sinat_38353947/article/details/77925426
+包含路径和库路径设置，网址：https://blog.csdn.net/u013146742/article/details/58140252
+关于链接错误，不要按上述网址的将32改为64，因此在vs中创建的是win32控制台程序，所以要选择第一个网址中32位的dll，lib下载
+关于链接错误error LNK1107: 文件无效或损坏: 无法在 0x3638 处读取，取消附加依赖项以及项目属性中链接器相关配置，改为在头文件中添加
+#pragma comment(lib , "XXXXX.lib")
+貌似是动态库和镜头库的问题，网址：https://zhidao.baidu.com/question/1861875050993123307.html
+
